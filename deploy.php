@@ -10,14 +10,13 @@ set('application', 'laradep');
 set('repository', 'git@gitlab.com:adhenawer/laradep.git');
 
 // Hosts
-
 host('159.89.184.227')
+    ->stage('digital-ocean')
     ->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
-    ->set('deploy_path', '/var/www/html/laradep');    
-    
-// Tasks
+    ->set('deploy_path', '/var/www/html/laradep');
 
+// Tasks
 task('build', function () {
     run('cd {{release_path}} && build');
 });

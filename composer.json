@@ -48,5 +48,8 @@
         "optimize-autoloader": true
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "require-dev": {
+        "deployer/deployer": "^6.2"
+    }
 }

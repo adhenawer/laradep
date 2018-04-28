@@ -1,12 +1,26 @@
 stages:
-  - Deploy Digitalocean
+  - Deploy DigitalOcean
 
-Master:
-    stage: Deploy Digitalocean
+before_script:
+  - cd /home/gitlab-runner/deploy
+  - git fetch origin && git checkout origin/$CI_COMMIT_REF_NAME&& git pull origin $CI_COMMIT_REF_NAME
+
+Deploy branch:
+    stage: Deploy DigitalOcean
     when: manual
     tags: 
       - deploy
+    only:
+      - branches
     script:
-        - cd /home/gitlab-runner/deploy
-        - git pull origin master
-        - /usr/local/bin/dep/deployer.phar deploy
+        - /usr/local/bin/dep/deployer.phar deploy digital-ocean --branch="$CI_COMMIT_REF_NAME"
+
+Deploy tag:
+    stage: Deploy DigitalOcean
+    when: manual
+    tags: 
+      - deploy
+    only:
+      - tags
+    script:
+        - /usr/local/bin/dep/deployer.phar deploy digital-ocean --tag="$CI_COMMIT_TAG"
