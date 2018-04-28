@@ -1,0 +1,12 @@
+stages:
+  - Deploy Digitalocean
+
+Master:
+    stage: Deploy Digitalocean
+    when: manual
+    tags: 
+      - deploy
+    script:
+        - cd /home/gitlab-runner/deploy
+        - git pull origin master
+        - /usr/local/bin/dep/deployer.phar deploy
