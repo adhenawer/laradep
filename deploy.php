@@ -10,8 +10,23 @@ set('application', 'laradep');
 set('repository', 'git@gitlab.com:adhenawer/laradep.git');
 
 // Hosts
+// Digital Ocean
 host('159.89.184.227')
     ->stage('digital-ocean')
+    ->user('deployer')
+    ->identityFile('~/.ssh/deployerkey')
+    ->set('deploy_path', '/var/www/html/laradep');
+
+// Google Cloud Platform
+host('35.231.28.88')
+    ->stage('google-cloud-platform')
+    ->user('deployer')
+    ->identityFile('~/.ssh/deployerkey')
+    ->set('deploy_path', '/var/www/html/laradep');
+
+// Digital Ocean + Google Cloud Platform
+host('159.89.184.227', '35.231.28.88')
+    ->stage('all')
     ->user('deployer')
     ->identityFile('~/.ssh/deployerkey')
     ->set('deploy_path', '/var/www/html/laradep');
