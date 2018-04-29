@@ -5,7 +5,7 @@ before_script:
   - cd /home/gitlab-runner/deploy
   - git fetch origin && git checkout origin/$CI_COMMIT_REF_NAME&& git pull origin $CI_COMMIT_REF_NAME
 
-Deploy Digital Ocean:
+Digital Ocean:
     stage: Deploy
     when: manual
     tags: 
@@ -15,7 +15,7 @@ Deploy Digital Ocean:
     script:
         - /usr/local/bin/dep/deployer.phar deploy digital-ocean --branch="$CI_COMMIT_REF_NAME"
 
-Deploy Google Cloud:
+Google Cloud:
     stage: Deploy
     when: manual
     tags: 
