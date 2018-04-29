@@ -22,10 +22,12 @@
   - GIT 
   - Nginx
   - PHPfpm
+  - http://159.89.184.227/info.php
  
 #### [Google Cloud Plataform (GCP)](https://cloud.google.com/)
  - VM de aplicação
   - Idem VM DO
+  - http://35.231.28.88/info.php
 
 ### Fluxo de execução
 
@@ -46,6 +48,10 @@ graph TD;
   C-->E(Repositório - Gitlab);
   E-->C;
 ```
+
+#### Pipeline
+
+<img src="https://image.ibb.co/daCYdc/Screen_Shot_2018_04_29_at_20_32_27.png">
 
 ### Estrutura de diretórios da APP na VM
 ```
@@ -79,12 +85,16 @@ graph TD;
 
 ## Rodando
 
-Force host(laradep.com) para o IP da APP da DO(159.89.184.227) ou GCP(35.231.28.88)
+Force host **laradep.com** para o IP da VM da DO **159.89.184.227**
 
 <img src="https://image.ibb.co/dRuzic/Screen_Shot_2018_04_28_at_20_56_43.png">
 
+Force host **laradep-gcp.com** para o IP da VM GCP **35.231.28.88**
+
+<img src="https://image.ibb.co/huiBWx/Screen_Shot_2018_04_29_at_20_43_46.png">
+
 ### Links
-- [deploy.php](https://gitlab.com/adhenawer/laradep/blob/master/deploy.php)
-- [gitlab-ci.yml](https://gitlab.com/adhenawer/laradep/blob/master/deploy.php)
-- [pipeline](https://gitlab.com/adhenawer/laradep/pipelines/21243564)
-- [Tutorial completo](https://www.digitalocean.com/community/tutorials/automatically-deploy-laravel-applications-deployer-ubuntu)
+- **deploy.php** https://gitlab.com/adhenawer/laradep/blob/master/deploy.php
+- **gitlab-ci.yml** https://gitlab.com/adhenawer/laradep/blob/master/.gitlab-ci.yml
+- **Pipeline** https://gitlab.com/adhenawer/laradep/pipelines/21269832
+- **Tutorial completo** https://www.digitalocean.com/community/tutorials/automatically-deploy-laravel-applications-deployer-ubuntu
