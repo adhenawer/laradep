@@ -18,6 +18,7 @@
   - Add user deployer
   - Gerado ssh-keys (comunicação com servidor do repositório (gitlab))
   - Add permissão server deploy (authorized_keys)
+  - Composer
   - GIT 
   - Nginx
   - PHPfpm

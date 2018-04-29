@@ -25,15 +25,15 @@ Deploy Google Cloud:
     script:
         - /usr/local/bin/dep/deployer.phar deploy google-cloud-platform --branch="$CI_COMMIT_REF_NAME"
 
-All:
-    stage: Deploy
-    when: manual
-    tags: 
-      - deploy
-    only:
-      - branches
-    script:
-        - /usr/local/bin/dep/deployer.phar deploy all --branch="$CI_COMMIT_REF_NAME"
+# All:
+#     stage: Deploy
+#     when: manual
+#     tags: 
+#       - deploy
+#     only:
+#       - branches
+#     script:
+#         - /usr/local/bin/dep/deployer.phar deploy all --branch="$CI_COMMIT_REF_NAME"
 
 Tag All:
     stage: Deploy
