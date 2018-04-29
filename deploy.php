@@ -25,11 +25,11 @@ host('35.231.28.88')
     ->set('deploy_path', '/var/www/html/laradep');
 
 // Digital Ocean + Google Cloud Platform
-host('159.89.184.227', '35.231.28.88')
-    ->stage('all')
-    ->user('deployer')
-    ->identityFile('~/.ssh/deployerkey')
-    ->set('deploy_path', '/var/www/html/laradep');
+// host('159.89.184.227', '35.231.28.88')
+//     ->stage('all')
+//     ->user('deployer')
+//     ->identityFile('~/.ssh/deployerkey')
+//     ->set('deploy_path', '/var/www/html/laradep');
 
 // Tasks
 task('build', function () {
